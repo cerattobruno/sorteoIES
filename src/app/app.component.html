@@ -13,7 +13,7 @@
             <hr>
 
             <div class="row scroll">
-                <table class="table table-sm table-striped table-borderless ">
+                <table class="table table-sm table-hover table-borderless ">
                     <thead>
                         <tr>
                             <th scope="col">N°</th>
@@ -34,11 +34,11 @@
 
         <div class="col col-6">
             <div class="row justify-content-center ">
-                <h5>Ganadores</h5>
+                <h5>Ganador</h5>
             </div>
             <hr>
 
-            <div class="row ml-2 mr-2 ">
+            <div class="row justify-content-center ml-2 mr-2 ">
                 <!--
                 <table class="table table-sm  table-borderless">
                     <thead>
@@ -56,7 +56,7 @@
                 </table>
                 -->
                 <div *ngFor="let ganador of ganadores; let i=index" class="card bg-light mt-2" style="width:90%">
-                    <div class="card-header">{{i+1}}° Puesto</div>
+
                     <div class="card-body">
                         <h6 class="card-text">Participante n°: {{ ganador }}</h6>
                     </div>
