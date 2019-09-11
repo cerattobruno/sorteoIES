@@ -17,15 +17,15 @@
                     <thead>
                         <tr>
                             <th scope="col">N°</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
+                            <th scope="col">Nombre y Apellido</th>
+                            <!-- <th scope="col">Apellido</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let participante of inscriptos; let i=index">
+                        <tr *ngFor="let participante of participantes; let i=index">
                             <th scope="row">{{ i + 1 }}</th>
-                            <td>{{ participante.nombre }}</td>
-                            <td>{{ participante.apellido }}</td>
+                            <td>{{ participante }}</td>
+                            <!-- <td>{{ participante.apellido }}</td> -->
                         </tr>
                     </tbody>
                 </table>
