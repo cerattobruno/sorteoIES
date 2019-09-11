@@ -1,20 +1,79 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container mt-4">
 
+    <div class="row justify-content-center mt-4 mb-4">
+        <img src="../assets/logo.png" alt="Logo IES-UCU">
+    </div>
+    <hr>
+
+    <div class="row justify-content-center mt-4 mb-4">
+        <div class="col col-6">
+            <div class="row justify-content-center">
+                <h5>Inscriptos</h5>
+            </div>
+            <hr>
+
+            <div class="row scroll">
+                <table class="table table-sm table-striped table-borderless ">
+                    <thead>
+                        <tr>
+                            <th scope="col">N°</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let participante of inscriptos; let i=index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>{{ participante.nombre }}</td>
+                            <td>{{ participante.apellido }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col col-6">
+            <div class="row justify-content-center ">
+                <h5>Ganadores</h5>
+            </div>
+            <hr>
+
+            <div class="row ml-2 mr-2 ">
+                <!--
+                <table class="table table-sm  table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Puesto</th>
+                            <th scope="col">N°</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-dark">
+                        <tr *ngFor="let ganador of ganadores; let i=index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>{{ ganador }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                -->
+                <div *ngFor="let ganador of ganadores; let i=index" class="card bg-light mt-2" style="width:90%">
+                    <div class="card-header">{{i+1}}° Puesto</div>
+                    <div class="card-body">
+                        <h6 class="card-text">Participante n°: {{ ganador }}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row justify-content-center mt-4 mb-4">
+        <div class="col col-6">
+            <button type="button" class="btn btn-danger btn-lg btn-block" (click)="sorteo()">Sortear</button>
+        </div>
+
+        <div class="col col-6">
+            <button type="button" class="btn btn-warning btn-lg btn-block" (click)="restart()">Limpiar</button>
+        </div>
+
+    </div>
+</div>
